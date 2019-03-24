@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+    id("com.github.buildcontainers") version "0.1.0"
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+mainClassName = 'com.github.buildcontainers.hello-world-groovy'
+
+import com.github.buildcontainers.extension.EnvironmentDefinitionType
+import com.github.buildcontainers.task.invocation.CommandInvocation
+
+buildcontainers {
+    environmentDefinitionType = EnvironmentDefinitionType.BASE_IMAGE
+
+    baseImageEnvironment {
+        tag = "openjdk:11-slim"
+    }
+}
+
+task runCommandInsideDocker(type: CommandInvocation) {
+    commandList = [ "java", "-version" ]
+}

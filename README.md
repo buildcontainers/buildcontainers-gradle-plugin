@@ -1,4 +1,4 @@
-# Buildcontainers
+# Buildcontainers [![Build Status](https://travis-ci.org/buildcontainers/buildcontainers-gradle-plugin.svg?branch=master)](https://travis-ci.org/buildcontainers/buildcontainers-gradle-plugin)
 
 Buildcontainers is gradle plugin that allows you to build and test your project inside docker container. Basically
 all you need to do is to define build environment and specify which tasks you want to run. Main purpose is to make it
